@@ -39,6 +39,14 @@
         "env": []
     },
     {
+        "id": "ba0769d780e66b06",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "9b28c690cfdca0d1",
         "type": "mqtt-broker",
         "name": "Raspi8",
@@ -113,6 +121,56 @@
         "willPayload": "",
         "willMsg": {},
         "sessionExpiry": ""
+    },
+    {
+        "id": "725706ee4d6f6f91",
+        "type": "telegram bot",
+        "botname": "Raspi8_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "de3865504f29a986",
+        "type": "telegram bot",
+        "botname": "Raspi8_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
     },
     {
         "id": "bfc7ce5919d52349",
@@ -495,6 +553,144 @@
         "endpoint": "https://thingspeak.com",
         "x": 590,
         "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3429d033aeb1392d",
+        "type": "telegram receiver",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "bot": "725706ee4d6f6f91",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "089f586fa87c3216"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "089f586fa87c3216",
+        "type": "debug",
+        "z": "ba0769d780e66b06",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ecd8c3e995ea9604",
+        "type": "inject",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "12bcf640865a415d"
+            ]
+        ]
+    },
+    {
+        "id": "12bcf640865a415d",
+        "type": "function",
+        "z": "ba0769d780e66b06",
+        "name": "function 1",
+        "func": "msg.payload={\n    \"chatId\":400176404,\n    \"type\":\"message\",\n    \"content\":\"Holaaaa esmorzem?\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "cfe4e6cdc40f1139"
+            ]
+        ]
+    },
+    {
+        "id": "cfe4e6cdc40f1139",
+        "type": "telegram sender",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "bot": "725706ee4d6f6f91",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 550,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b98f164eb1103c91",
+        "type": "telegram command",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "command": "/temp1",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "725706ee4d6f6f91",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 190,
+        "y": 380,
+        "wires": [
+            [
+                "4d1a585a0ce06e7f",
+                "12bcf640865a415d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4d1a585a0ce06e7f",
+        "type": "debug",
+        "z": "ba0769d780e66b06",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 380,
         "wires": []
     }
 ]
