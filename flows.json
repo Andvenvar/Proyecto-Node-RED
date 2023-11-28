@@ -1,5 +1,13 @@
 [
     {
+        "id": "497faf91ed1a296a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "60b97ccbc49a157d",
         "type": "tab",
         "label": "Flow 1",
@@ -21,6 +29,14 @@
         "label": "Practice27",
         "disabled": true,
         "info": ""
+    },
+    {
+        "id": "388921ca8de47e07",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": true,
+        "info": "",
+        "env": []
     },
     {
         "id": "9b28c690cfdca0d1",
@@ -71,6 +87,278 @@
         "order": 1,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "489a868ab000e3d9",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.8.6",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bfc7ce5919d52349",
+        "type": "switch",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "24",
+                "vt": "num"
+            },
+            {
+                "t": "lte",
+                "v": "24",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 180,
+        "wires": [
+            [
+                "d326289871f44b56"
+            ],
+            [
+                "68bb4add92f52a95"
+            ]
+        ]
+    },
+    {
+        "id": "d326289871f44b56",
+        "type": "change",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperatura",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "cdd6dffa332128f8"
+            ]
+        ]
+    },
+    {
+        "id": "68bb4add92f52a95",
+        "type": "change",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperatura",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 220,
+        "wires": [
+            [
+                "cdd6dffa332128f8"
+            ]
+        ]
+    },
+    {
+        "id": "cdd6dffa332128f8",
+        "type": "rbe",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "e597302b2572ca2e"
+            ]
+        ]
+    },
+    {
+        "id": "e597302b2572ca2e",
+        "type": "switch",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "neq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 380,
+        "wires": [
+            [
+                "f1bfd5445855900b"
+            ],
+            [
+                "e755b2ef40983725"
+            ]
+        ]
+    },
+    {
+        "id": "f1469cb2c692e370",
+        "type": "debug",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "db6591a4af2ffc72",
+        "type": "mqtt in",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "topic": "cefi/ejercicio1/fab1/temp6",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "489a868ab000e3d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "bfc7ce5919d52349",
+                "623b6adcc7f6bdad"
+            ]
+        ]
+    },
+    {
+        "id": "623b6adcc7f6bdad",
+        "type": "debug",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f1bfd5445855900b",
+        "type": "function",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "func": "msg.payload=\"ALARMA!!! \" + flow.get('temperatura');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 360,
+        "wires": [
+            [
+                "f1469cb2c692e370"
+            ]
+        ]
+    },
+    {
+        "id": "e755b2ef40983725",
+        "type": "function",
+        "z": "497faf91ed1a296a",
+        "name": "",
+        "func": "msg.payload=\"TODO OK\" + flow.get('temperatura');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 440,
+        "wires": [
+            [
+                "f1469cb2c692e370"
+            ]
+        ]
     },
     {
         "id": "80de04ed18e61176",
