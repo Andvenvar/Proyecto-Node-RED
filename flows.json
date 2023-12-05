@@ -1,56 +1,25 @@
 [
     {
-        "id": "497faf91ed1a296a",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "60b97ccbc49a157d",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": true,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "374522709711dc33",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Ubidots",
         "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "ba980d16c46d9bc6",
-        "type": "tab",
-        "label": "Practice27",
-        "disabled": true,
-        "info": ""
-    },
-    {
-        "id": "388921ca8de47e07",
-        "type": "tab",
-        "label": "Flow 3",
-        "disabled": true,
         "info": "",
         "env": []
     },
     {
         "id": "ba0769d780e66b06",
         "type": "tab",
-        "label": "Flow 4",
+        "label": "Telegram",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "9b28c690cfdca0d1",
+        "id": "489a868ab000e3d9",
         "type": "mqtt-broker",
-        "name": "Raspi8",
-        "broker": "192.168.1.103:1883",
+        "name": "",
+        "broker": "192.168.8.19",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -61,65 +30,17 @@
         "autoUnsubscribe": true,
         "birthTopic": "",
         "birthQos": "0",
-        "birthRetain": "false",
         "birthPayload": "",
         "birthMsg": {},
         "closeTopic": "",
         "closeQos": "0",
-        "closeRetain": "false",
         "closePayload": "",
         "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willRetain": "false",
         "willPayload": "",
         "willMsg": {},
         "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "2b7ac01b.fc984",
-        "type": "ui_group",
-        "name": "SENSORS",
-        "tab": "99ab8dc5.f435c",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "99ab8dc5.f435c",
-        "type": "ui_tab",
-        "name": "HTTP",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "489a868ab000e3d9",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "192.168.8.6",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
         "sessionExpiry": ""
     },
     {
@@ -173,318 +94,144 @@
         "verboselogging": false
     },
     {
-        "id": "bfc7ce5919d52349",
-        "type": "switch",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "24",
-                "vt": "num"
+        "id": "99ab8dc5.f435c",
+        "type": "ui_tab",
+        "name": "HTTP",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2b7ac01b.fc984",
+        "type": "ui_group",
+        "name": "SENSORS",
+        "tab": "99ab8dc5.f435c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "655d70996aa68d10",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
             },
-            {
-                "t": "lte",
-                "v": "24",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 230,
-        "y": 180,
-        "wires": [
-            [
-                "d326289871f44b56"
-            ],
-            [
-                "68bb4add92f52a95"
-            ]
-        ]
-    },
-    {
-        "id": "d326289871f44b56",
-        "type": "change",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "temperatura",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
             },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "1",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 140,
-        "wires": [
-            [
-                "cdd6dffa332128f8"
-            ]
-        ]
-    },
-    {
-        "id": "68bb4add92f52a95",
-        "type": "change",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "temperatura",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
             },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "0",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 220,
-        "wires": [
-            [
-                "cdd6dffa332128f8"
-            ]
-        ]
-    },
-    {
-        "id": "cdd6dffa332128f8",
-        "type": "rbe",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 570,
-        "y": 180,
-        "wires": [
-            [
-                "e597302b2572ca2e"
-            ]
-        ]
-    },
-    {
-        "id": "e597302b2572ca2e",
-        "type": "switch",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
             },
-            {
-                "t": "neq",
-                "v": "1",
-                "vt": "num"
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
             }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 350,
-        "y": 380,
-        "wires": [
-            [
-                "f1bfd5445855900b"
-            ],
-            [
-                "e755b2ef40983725"
-            ]
-        ]
-    },
-    {
-        "id": "f1469cb2c692e370",
-        "type": "debug",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "db6591a4af2ffc72",
-        "type": "mqtt in",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "topic": "cefi/ejercicio1/fab1/temp6",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "489a868ab000e3d9",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 150,
-        "y": 120,
-        "wires": [
-            [
-                "bfc7ce5919d52349",
-                "623b6adcc7f6bdad"
-            ]
-        ]
-    },
-    {
-        "id": "623b6adcc7f6bdad",
-        "type": "debug",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 390,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "f1bfd5445855900b",
-        "type": "function",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "func": "msg.payload=\"ALARMA!!! \" + flow.get('temperatura');\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 480,
-        "y": 360,
-        "wires": [
-            [
-                "f1469cb2c692e370"
-            ]
-        ]
-    },
-    {
-        "id": "e755b2ef40983725",
-        "type": "function",
-        "z": "497faf91ed1a296a",
-        "name": "",
-        "func": "msg.payload=\"TODO OK\" + flow.get('temperatura');\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 480,
-        "y": 440,
-        "wires": [
-            [
-                "f1469cb2c692e370"
-            ]
-        ]
-    },
-    {
-        "id": "80de04ed18e61176",
-        "type": "inject",
-        "z": "60b97ccbc49a157d",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
             }
-        ],
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "HOLA",
-        "payloadType": "str",
-        "x": 200,
-        "y": 140,
-        "wires": [
-            [
-                "8f98f14ccbe7e1f3"
-            ]
-        ]
+        }
     },
     {
-        "id": "8f98f14ccbe7e1f3",
-        "type": "debug",
-        "z": "60b97ccbc49a157d",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "93afc2e181291362",
-        "type": "mqtt in",
-        "z": "374522709711dc33",
-        "name": "",
-        "topic": "cefi/projecte1/fabrica1/temp1",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "9b28c690cfdca0d1",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 180,
-        "y": 140,
-        "wires": [
-            [
-                "26cad63313dab3c2",
-                "2403cd9b.1b5802",
-                "967ea0402c328df1"
-            ]
-        ]
+        "id": "cb6641fa19ea2b38",
+        "type": "telegram bot",
+        "botname": "Proyecto_Panel4_Bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
     },
     {
         "id": "26cad63313dab3c2",
@@ -499,21 +246,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "42326adb62103b0f",
-        "type": "ubidots_out",
-        "z": "374522709711dc33",
-        "name": "",
-        "token": "BBUS-5tIiaepkhkJqhnm0GU659qmNwPD6CP",
-        "label_device": "",
-        "device_label": "machine_1",
-        "tier": "business",
-        "tls_checkbox": true,
-        "x": 590,
-        "y": 200,
+        "y": 100,
         "wires": []
     },
     {
@@ -521,15 +254,15 @@
         "type": "function",
         "z": "374522709711dc33",
         "name": "function",
-        "func": "var label = msg.topic;\nvar value = msg.payload;\n\nmsg.payload = {\n [label]: value\n};\n\nmsg.payload.ubidotsDeviceLabel = \"Machine_1\";\n\nreturn msg;",
+        "func": "var label = msg.topic;\nvar value = msg.payload;\n\nmsg.payload = {\n [label]: value\n};\n\nmsg.payload.ubidotsDeviceLabel = \"Panel4\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 200,
+        "x": 580,
+        "y": 160,
         "wires": [
             [
                 "42326adb62103b0f"
@@ -537,12 +270,26 @@
         ]
     },
     {
+        "id": "42326adb62103b0f",
+        "type": "ubidots_out",
+        "z": "374522709711dc33",
+        "name": "",
+        "token": "BBUS-0A9iYRba94FCJj92INOXuRhEqcW5Zb",
+        "label_device": "",
+        "device_label": "Panel4",
+        "tier": "educational",
+        "tls_checkbox": true,
+        "x": 770,
+        "y": 160,
+        "wires": []
+    },
+    {
         "id": "967ea0402c328df1",
         "type": "thingspeak42",
         "z": "374522709711dc33",
         "name": "",
         "delay": "15",
-        "topic1": "cefi/projecte1/fabrica1/temp1",
+        "topic1": "cefi/fabrica/panel4/temperatura1",
         "topic2": "",
         "topic3": "",
         "topic4": "",
@@ -552,24 +299,30 @@
         "topic8": "",
         "endpoint": "https://thingspeak.com",
         "x": 590,
-        "y": 300,
+        "y": 260,
         "wires": []
     },
     {
-        "id": "3429d033aeb1392d",
-        "type": "telegram receiver",
-        "z": "ba0769d780e66b06",
+        "id": "93afc2e181291362",
+        "type": "mqtt in",
+        "z": "374522709711dc33",
         "name": "",
-        "bot": "725706ee4d6f6f91",
-        "saveDataDir": "",
-        "filterCommands": false,
-        "x": 230,
-        "y": 160,
+        "topic": "cefi/fabrica/panel4/temperatura1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "489a868ab000e3d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 100,
         "wires": [
             [
-                "089f586fa87c3216"
-            ],
-            []
+                "26cad63313dab3c2",
+                "2403cd9b.1b5802",
+                "967ea0402c328df1"
+            ]
         ]
     },
     {
@@ -584,8 +337,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 140,
+        "x": 780,
+        "y": 80,
         "wires": []
     },
     {
@@ -609,8 +362,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 260,
+        "x": 160,
+        "y": 180,
         "wires": [
             [
                 "12bcf640865a415d"
@@ -622,14 +375,114 @@
         "type": "function",
         "z": "ba0769d780e66b06",
         "name": "function 1",
-        "func": "msg.payload={\n    \"chatId\":400176404,\n    \"type\":\"message\",\n    \"content\":\"Holaaaa esmorzem?\"\n}\nreturn msg;",
+        "func": "msg.payload={\n    \"chatId\":1605966014,\n    \"type\":\"message\",\n    \"content\":\"respuesta desde nodered\"\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "cfe4e6cdc40f1139"
+            ]
+        ]
+    },
+    {
+        "id": "3429d033aeb1392d",
+        "type": "telegram receiver",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "bot": "cb6641fa19ea2b38",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "089f586fa87c3216"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cfe4e6cdc40f1139",
+        "type": "telegram sender",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "bot": "cb6641fa19ea2b38",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 870,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc4e9ca16618fa95",
+        "type": "mqtt in",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "topic": "cefi/fabrica/panel4/temperatura1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "489a868ab000e3d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "e102e968f114df5f",
+                "18e0188a0d20346c"
+            ]
+        ]
+    },
+    {
+        "id": "e102e968f114df5f",
+        "type": "change",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temp",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 360,
+        "wires": [
+            [
+                "86a98ba83ec28196"
+            ]
+        ]
+    },
+    {
+        "id": "bc941fb6b5a8bbd5",
+        "type": "function",
+        "z": "ba0769d780e66b06",
+        "name": "function 2",
+        "func": "msg.payload={\n    \"chatId\":1605966014,\n    \"type\":\"message\",\n    \"content\":\"la temperatura es : \" + flow.get('temp')\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
         "y": 260,
         "wires": [
             [
@@ -638,47 +491,32 @@
         ]
     },
     {
-        "id": "cfe4e6cdc40f1139",
-        "type": "telegram sender",
-        "z": "ba0769d780e66b06",
-        "name": "",
-        "bot": "725706ee4d6f6f91",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 550,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b98f164eb1103c91",
+        "id": "c8d4d487bd0ef22c",
         "type": "telegram command",
         "z": "ba0769d780e66b06",
         "name": "",
-        "command": "/temp1",
+        "command": "/temperatura",
         "description": "",
         "registercommand": false,
         "language": "",
         "scope": "default",
-        "bot": "725706ee4d6f6f91",
+        "bot": "cb6641fa19ea2b38",
         "strict": false,
         "hasresponse": true,
         "useregex": false,
         "removeregexcommand": false,
         "outputs": 2,
-        "x": 190,
-        "y": 380,
+        "x": 150,
+        "y": 260,
         "wires": [
             [
-                "4d1a585a0ce06e7f",
-                "12bcf640865a415d"
+                "bc941fb6b5a8bbd5"
             ],
             []
         ]
     },
     {
-        "id": "4d1a585a0ce06e7f",
+        "id": "86a98ba83ec28196",
         "type": "debug",
         "z": "ba0769d780e66b06",
         "name": "debug 4",
@@ -689,8 +527,233 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 380,
+        "x": 680,
+        "y": 360,
         "wires": []
+    },
+    {
+        "id": "18e0188a0d20346c",
+        "type": "switch",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "str"
+            },
+            {
+                "t": "lte",
+                "v": "20",
+                "vt": "str"
+            },
+            {
+                "t": "btwn",
+                "v": "20",
+                "vt": "num",
+                "v2": "30",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "3fd1631dc4050880"
+            ],
+            [
+                "3001761d091d00b5"
+            ],
+            [
+                "a1918ed92dfeb521"
+            ]
+        ]
+    },
+    {
+        "id": "3fd1631dc4050880",
+        "type": "change",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "calor",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "449a752191c6e804"
+            ]
+        ]
+    },
+    {
+        "id": "a1918ed92dfeb521",
+        "type": "change",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "normal",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 540,
+        "wires": [
+            [
+                "0f892a4897e5aeec"
+            ]
+        ]
+    },
+    {
+        "id": "3001761d091d00b5",
+        "type": "change",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "frio",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 500,
+        "wires": [
+            [
+                "653813a89fa73d2b"
+            ]
+        ]
+    },
+    {
+        "id": "449a752191c6e804",
+        "type": "function",
+        "z": "ba0769d780e66b06",
+        "name": "function 3",
+        "func": "msg.payload={\n    \"chatId\":1605966014,\n    \"type\":\"message\",\n    \"content\": \"temperatura demasiado alta.\",\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "e317b4d7c049822a"
+            ]
+        ]
+    },
+    {
+        "id": "0f892a4897e5aeec",
+        "type": "function",
+        "z": "ba0769d780e66b06",
+        "name": "function 4",
+        "func": "msg.payload={\n    \"chatId\":1605966014,\n    \"type\":\"message\",\n    \"content\":\"temperatura estable.\",\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 540,
+        "wires": [
+            [
+                "e317b4d7c049822a"
+            ]
+        ]
+    },
+    {
+        "id": "653813a89fa73d2b",
+        "type": "function",
+        "z": "ba0769d780e66b06",
+        "name": "function 5",
+        "func": "msg.payload={\n    \"chatId\":1605966014,\n    \"type\":\"message\",\n    \"content\":\"temperatura demasiado baja.\",\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 500,
+        "wires": [
+            [
+                "e317b4d7c049822a"
+            ]
+        ]
+    },
+    {
+        "id": "e317b4d7c049822a",
+        "type": "rbe",
+        "z": "ba0769d780e66b06",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 770,
+        "y": 500,
+        "wires": [
+            [
+                "cfe4e6cdc40f1139"
+            ]
+        ]
     }
 ]
